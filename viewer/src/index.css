@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Source Sans 3', ui-sans-serif, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --color-canvas: #f3efe8;
+  --color-paper: #fffcf7;
+  --color-mist: #ebe4da;
+  --color-line: #d6cdc0;
+  --color-ink: #152033;
+  --color-sidebar: #0f1c2e;
+  --color-sidebar-muted: #8b97a8;
+  --color-sidebar-hover: #1a2b42;
+  --color-teal: #0f766e;
+  --color-ahead: #0e7490;
+  --color-coral: #b42318;
+  --color-track: #15803d;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background: var(--color-canvas);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility font-body {
+  font-family: var(--font-body);
+}
+
+.prose-brain h1,
+.prose-brain h2,
+.prose-brain h3 {
+  font-family: var(--font-display);
+  font-weight: 650;
+  margin: 0.6em 0 0.35em;
+  color: var(--color-ink);
+}
+
+.prose-brain p,
+.prose-brain ul,
+.prose-brain li {
+  margin: 0.35em 0;
+}
+
+.prose-brain a {
+  color: var(--color-teal);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: color-mix(in srgb, var(--color-ink) 35%, transparent);
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
+
+.ProseMirror code {
+  border-radius: 0.25rem;
+  background: var(--color-mist);
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+}
