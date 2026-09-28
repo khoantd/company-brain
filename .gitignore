@@ -50,3 +50,5 @@ venv/
 
 # Keep intentionally supplied assets and outputs tracked; do not add broad
 # image, video, archive, 09-ASSETS, or 10-OUTPUTS ignore rules here.
+.codegraph/
+.vercel

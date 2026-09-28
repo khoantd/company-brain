@@ -6,7 +6,7 @@ It does **not** mean that AI processing is automatically private or offline.
 
 ## When AI works with these files
 
-When you ask Codex, Claude, or another cloud AI service to read or work with Company Brain files, relevant file contents, instructions, prompts, and surrounding context may be sent to that provider for processing. The provider may be able to access and process that information according to its product terms, privacy policy, account settings, retention controls, and organization configuration.
+When you ask any AI service to read or work with Company Brain files, relevant file contents, instructions, prompts, and surrounding context may be sent to that provider for processing. The provider may be able to access and process that information according to its product terms, privacy policy, account settings, retention controls, and organization configuration.
 
 Local file storage does not prove that:
 
@@ -15,7 +15,7 @@ Local file storage does not prove that:
 - prompts or file excerpts are never retained;
 - a provider's training, logging, security, or retention settings match your company's requirements.
 
-Review the current terms and settings of every AI provider you use. Codex Desktop is the primary tested V1 interface, but provider behavior is outside this repository's control and may change.
+Review the current terms and settings of every AI provider you use. Provider behavior is outside this repository's control and may change.
 
 ## Practical safeguards
 

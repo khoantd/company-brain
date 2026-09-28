@@ -5,7 +5,7 @@
 1. Download this repository using **Code → Download ZIP**.
 2. Unzip it and keep the whole folder together.
 3. Put existing documents, notes, exports, brand files, assets, and project material in `00-INBOX`.
-4. Open the whole folder in Codex Desktop.
+4. Open the whole folder in any file-aware AI assistant — Cursor, Claude, Copilot, a local model via Ollama, or any tool that can read and write files.
 5. Say **“Set up my company brain.”**
 
 Codex analyzes what you supplied before asking questions. It should ask only for important missing information, show material conflicts, and wait for your approval before turning proposals into consequential company knowledge.

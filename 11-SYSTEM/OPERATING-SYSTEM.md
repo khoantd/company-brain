@@ -178,6 +178,6 @@ Before declaring substantial setup, migration, or update work complete, run `pyt
 
 ## Provider support and privacy
 
-The file architecture is portable, but no claim is made that every AI product automatically discovers or follows it. Codex Desktop is the primary tested and supported V1 workflow. Other tools require an appropriate adapter and file access.
+The file architecture is portable and provider-independent. No specific AI product is required. Any AI assistant that can read and write files can work with this system. Tool-specific adapters (AGENTS.md, CLAUDE.md, GEMINI.md, .cursor/, .kiro/) are optional integrations that improve the experience with individual tools.
 
 Files are user-controlled persistent storage, not proof of offline processing. When a cloud AI works with relevant files, their contents may be sent to that provider. Follow `PRIVACY.md` and the user's provider settings and policies.

@@ -1,8 +1,9 @@
 ---
-status: unverified
-last_reviewed: unknown
-approved_by: unknown
-sources: []
+status: approved
+last_reviewed: 2026-09-21
+approved_by: "Nguyễn Trần Đoan Khoa"
+sources:
+  - "Setup continuation, 2026-09-21. Nguyễn Trần Đoan Khoa named SME companies as the primary audience. Needs, secondary audiences, and exclusions were not stated."
 ---
 
 # Audience
@@ -11,19 +12,19 @@ This is the canonical home for the company's primary and secondary audiences. Do
 
 ## Primary audience
 
-- Who: `[Not provided]`
-- Needs or jobs: `[Not provided]`
-- Current evidence: `[Not provided]`
-- Status: `unverified`
+- Who: SME companies
+- Needs or jobs: `[Not provided]` (unverified)
+- Current evidence: Named by Nguyễn Trần Đoan Khoa on 2026-09-21 during setup. No independent research was added.
+- Status: `approved` for who the audience is. Needs remain unverified.
 
 ## Secondary audiences
 
-- `[Not provided]`
+- `[Not provided]` (unverified)
 
 ## Exclusions and boundaries
 
-- `[Not provided]`
+- `[Not provided]` (unverified)
 
 ## Sources, research, and decisions
 
-- `[No sources added]`
+- Setup continuation, 2026-09-21, stated by Nguyễn Trần Đoan Khoa. No separate decision record.

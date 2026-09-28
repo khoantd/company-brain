@@ -43,6 +43,17 @@
       "uniqueItems": true,
       "contains": { "const": "approved" },
       "items": { "enum": ["approved", "confirmed", "proposed", "unverified", "conflicting", "superseded"] }
+    },
+    "storage": {
+      "type": "object",
+      "required": ["knowledgeBackend", "bucket", "objectKeyLayout"],
+      "properties": {
+        "knowledgeBackend": { "const": "minio" },
+        "bucket": { "type": "string", "minLength": 1 },
+        "objectKeyLayout": { "const": "canonical-path" },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false

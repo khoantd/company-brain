@@ -13,10 +13,10 @@ The Company Brain keeps knowledge, goals, history, approved decisions, projects,
 1. Download this repository from **Code → Download ZIP**.
 2. Unzip it.
 3. Add existing company material to `00-INBOX`.
-4. Open the whole folder in Codex Desktop.
+4. Open the whole folder in any file-aware AI assistant — Cursor, Claude, Copilot, a local model via Ollama, or any tool that can read and write files.
 5. Say: **“Set up my company brain.”**
 
-That's it. Codex analyzes existing material first, asks only for important missing information, and requests approval before establishing consequential conclusions.
+That's it. The AI analyzes existing material first, asks only for important missing information, and requests approval before establishing consequential conclusions.
 
 Once your local identity is established, say **“Hi”** or **“Hello.”** The Brain will greet you by name, recap the latest dated company activity, and suggest useful next actions based on your role and current work.
 
@@ -29,7 +29,7 @@ The migration preserves useful brand information, skills, references, assets, pr
 
 ## SOLO
 
-Download the ZIP, keep it locally, and open it with Codex Desktop. You do not need Git or a GitHub account after download. Read [START-HERE.md](START-HERE.md) for the short walkthrough.
+Download the ZIP, keep it locally, and open it with any file-aware AI assistant. You do not need Git or a GitHub account after download. Read [START-HERE.md](START-HERE.md) for the short walkthrough.
 
 ## TEAM
 
@@ -79,4 +79,4 @@ See [LICENSE.md](LICENSE.md) for the full AI Tooltip Company Brain Limited Use L
 | `10-OUTPUTS` | Project deliverables and reports |
 | `11-SYSTEM` | Provider-independent rules, workflows, templates, schemas, migrations, and update tools |
 
-The canonical operating rules are in [11-SYSTEM/OPERATING-SYSTEM.md](11-SYSTEM/OPERATING-SYSTEM.md). [AGENTS.md](AGENTS.md) is the Codex adapter; [CLAUDE.md](CLAUDE.md) is a lightweight Claude Code adapter. Codex Desktop remains the primary tested V1 workflow.
+The canonical operating rules are in [11-SYSTEM/OPERATING-SYSTEM.md](11-SYSTEM/OPERATING-SYSTEM.md). [AGENTS.md](AGENTS.md) is the primary generic AI adapter; [CLAUDE.md](CLAUDE.md) is a lightweight Claude Code adapter. Tool-specific adapters for Cursor, Kiro, and Antigravity are also included as optional integrations.

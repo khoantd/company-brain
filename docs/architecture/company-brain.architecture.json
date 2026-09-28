@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Company Brain",
+    "locale": "en",
+    "output": "company-brain-architecture.html",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "operator-path",
+        "label": "Operator request path",
+        "focus": ["operators", "viewer_ui", "vercel", "api", "minio"],
+        "note": "Browser operators hit the Command Center SPA on Vercel; authenticated API calls read and write MinIO knowledge."
+      },
+      {
+        "id": "session-gate",
+        "label": "Session auth gate",
+        "focus": ["operators", "viewer_ui", "auth", "api"],
+        "note": "App-level session cookies gate every protected /api route before store access."
+      },
+      {
+        "id": "agent-sync",
+        "label": "Agent MCP sync",
+        "focus": ["agents", "mcp", "minio"],
+        "note": "Coding agents use company-brain-mcp tools against the same MinIO bucket; push_file stays proposed until human promotion."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "operators",
+      "type": "external",
+      "label": "Operators",
+      "sublabel": "Browser",
+      "pos": [40, 280],
+      "size": [120, 60]
+    },
+    {
+      "id": "agents",
+      "type": "external",
+      "label": "AI Agents",
+      "sublabel": "Cursor / Claude / MCP",
+      "pos": [40, 460],
+      "size": [130, 60]
+    },
+    {
+      "id": "viewer_ui",
+      "type": "frontend",
+      "label": "Command Center",
+      "sublabel": "React + Vite SPA",
+      "brand": "react",
+      "pos": [240, 280],
+      "size": [140, 60]
+    },
+    {
+      "id": "vercel",
+      "type": "cloud",
+      "label": "Vercel",
+      "sublabel": "royal-platform",
+      "brand": "vercel",
+      "tag": "company-brain-viewer",
+      "pos": [460, 280],
+      "size": [140, 60]
+    },
+    {
+      "id": "auth",
+      "type": "security",
+      "label": "Session Auth",
+      "sublabel": "cookie + VIEWER_AUTH_*",
+      "pos": [460, 110],
+      "size": [150, 64]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "Express API",
+      "sublabel": "/api/*",
+      "pos": [680, 280],
+      "size": [130, 60]
+    },
+    {
+      "id": "minio",
+      "type": "database",
+      "label": "MinIO",
+      "sublabel": "company-brain bucket",
+      "tag": "khoadue.me:9000",
+      "pos": [900, 280],
+      "size": [150, 60]
+    },
+    {
+      "id": "mcp",
+      "type": "backend",
+      "label": "company-brain-mcp",
+      "sublabel": "FastMCP / Horizon",
+      "pos": [460, 460],
+      "size": [160, 60]
+    },
+    {
+      "id": "git",
+      "type": "external",
+      "label": "Git repo",
+      "sublabel": "11-SYSTEM only",
+      "pos": [900, 460],
+      "size": [140, 60]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Vercel / Royal Platform",
+      "wraps": ["viewer_ui", "vercel", "auth", "api"],
+      "pad": 22
+    },
+    {
+      "kind": "security-group",
+      "label": "session-gated /api",
+      "wraps": ["auth", "api"],
+      "pad": 14
+    },
+    {
+      "kind": "region",
+      "label": "Runtime knowledge (01–10)",
+      "wraps": ["minio"],
+      "pad": 18
+    }
+  ],
+  "connections": [
+    {
+      "id": "ops-to-ui",
+      "from": "operators",
+      "to": "viewer_ui",
+      "label": "HTTPS",
+      "variant": "emphasis"
+    },
+    {
+      "id": "ui-to-vercel",
+      "from": "viewer_ui",
+      "to": "vercel",
+      "label": "SPA + /api"
+    },
+    {
+      "id": "vercel-to-api",
+      "from": "vercel",
+      "to": "api",
+      "label": "Fluid Compute"
+    },
+    {
+      "id": "auth-to-api",
+      "from": "auth",
+      "to": "api",
+      "label": "verify cookie",
+      "variant": "security",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "api-to-minio",
+      "from": "api",
+      "to": "minio",
+      "label": "S3 read/write",
+      "variant": "emphasis"
+    },
+    {
+      "id": "agents-to-mcp",
+      "from": "agents",
+      "to": "mcp",
+      "label": "MCP tools"
+    },
+    {
+      "id": "mcp-to-minio",
+      "from": "mcp",
+      "to": "minio",
+      "label": "S3 + proposed push",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "bottom"
+    },
+    {
+      "id": "git-side",
+      "from": "git",
+      "to": "minio",
+      "label": "OS stays in git",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "bottom"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Viewer path",
+      "items": [
+        "Command Center SPA on Vercel (royal-platform / company-brain-viewer)",
+        "Express /api serves tree, dashboards, edit, upload, and status",
+        "MinIO holds runtime folders 01-COMPANY … 10-OUTPUTS"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Auth & write rules",
+      "items": [
+        "App-level session cookie from VIEWER_AUTH_* + VIEWER_SESSION_SECRET",
+        "Viewer saves overwrite objects and stamp edited_via: viewer",
+        "MCP push_file remains create/proposed for other brains"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Split ownership",
+      "items": [
+        "company-brain-mcp is a dedicated FastMCP / Horizon package",
+        "11-SYSTEM operating docs stay in Git, not the MinIO bucket",
+        "Local fixtures use LocalFsStore when MINIO_* is unset"
+      ]
+    }
+  ]
+}

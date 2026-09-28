@@ -40,5 +40,11 @@
     "unverified",
     "conflicting",
     "superseded"
-  ]
+  ],
+  "storage": {
+    "knowledgeBackend": "minio",
+    "bucket": "company-brain",
+    "objectKeyLayout": "canonical-path",
+    "notes": "Runtime knowledge for 01-COMPANY … 10-OUTPUTS lives in MinIO. Endpoint and credentials are environment-only (MINIO_*). Framework files under 11-SYSTEM stay in git."
+  }
 }

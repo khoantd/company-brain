@@ -4,12 +4,12 @@ Choose the simplest workflow that fits the people using the Company Brain.
 
 ## Solo
 
-`Download ZIP → keep locally → open the whole folder with Codex Desktop`
+`Download ZIP → keep locally → open the whole folder with any file-aware AI assistant`
 
 1. On the official repository, choose **Code → Download ZIP**.
 2. Unzip the download and keep the folder somewhere backed up.
 3. Add existing material to `00-INBOX`.
-4. Open the whole folder in Codex Desktop and say **Set up my company brain**.
+4. Open the folder with any file-aware AI assistant and say **Set up my company brain**.
 
 No Git, GitHub account, GitHub CLI, or GitHub Desktop is required after download. The update checker also works without Git.
 

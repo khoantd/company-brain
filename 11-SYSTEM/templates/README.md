@@ -2,6 +2,8 @@
 
 Copy the appropriate template into its company-owned destination, remove instructional comments, and replace every bracketed placeholder. Do not claim `approved` status without a named human and explicit approval.
 
+For exporting a full company knowledge tree from another app, see [`../EXPORT-FORMAT.md`](../EXPORT-FORMAT.md).
+
 - `project.md` → `05-PROJECTS/<project>/PROJECT.md`
 - `decision.md` → `01-COMPANY/decisions/YYYY-MM-DD-<decision>.md`
 - `product.md` → `04-PRODUCTS/<product>/PRODUCT.md`
